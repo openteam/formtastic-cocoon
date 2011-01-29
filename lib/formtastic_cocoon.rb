@@ -1,4 +1,5 @@
 require 'formtastic_cocoon/view_helpers'
+require 'rails'
 
 module FormtasticCocoon
   class Railtie < ::Rails::Railtie
