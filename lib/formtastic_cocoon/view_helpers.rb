@@ -8,7 +8,7 @@ module FormtasticCocoon
     # - *f* : the form this link should be placed in
     def link_to_remove_association(name, f)
       is_dynamic = f.object.new_record?
-      f.hidden_field(:_destroy) + link_to(name, '#', :class => "remove_fields #{is_dynamic ? 'dynamic' : 'existing'}")
+      content_tag('li',f.hidden_field(:_destroy)+ link_to(name, '#', :class => "remove_fields #{is_dynamic ? 'dynamic' : 'existing'}"))
     end
 
     # :nodoc:
