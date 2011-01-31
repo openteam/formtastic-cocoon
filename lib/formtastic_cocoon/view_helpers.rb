@@ -26,7 +26,7 @@ module FormtasticCocoon
     #
     def link_to_add_association(name, f, association)
       new_object = f.object.class.reflect_on_association(association).klass.new
-      hidden_div = content_tag('li', :id => "#{association.to_s.singularize}_fields_template", :style => "display:none;") do
+      hidden_div = content_tag('div', :id => "#{association.to_s.singularize}_fields_template", :style => "display:none;") do
         render_association(association, f, new_object)
       end
       hidden_div.html_safe + content_tag('li', link_to(name, '#', :class => 'add_fields', :'data-association' => association.to_s.singularize))
